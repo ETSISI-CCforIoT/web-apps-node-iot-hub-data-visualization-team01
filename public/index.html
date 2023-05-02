@@ -1,3 +1,57 @@
+<!-- <!doctype html>
+
+<html lang="en">
+<head> -->
+    <!-- Required meta tags -->
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/chart-device-data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="js/web-logic.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+
+    <title>Car data visualization web</title>
+</head>
+
+<body>
+    <h1 class="flexHeader">
+        <span>
+            <span id="deviceCount">0 devices</span>
+            <select id="listOfDevices" class="select_box"></select>
+        </span>
+        <span>Car data visualization web</span>
+    </h1>
+    <div>
+        <div id="map"></div>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_q_ZThm7nySYzMdoL72JyNFTqplRBhoM&callback=initMap&v=weekly"
+            defer
+        ></script>
+    </div>
+</body>
+
+</html> -->
+
+<!-- <html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="module" src="js/web-logic.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_q_ZThm7nySYzMdoL72JyNFTqplRBhoM&callback=initMap">
+        </script>
+  </body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +59,8 @@
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script type="module" src="js/web-logic.js"></script>
+    <script src="js/chart-device-data.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script type="module" src="js/web-logic.js"></script> -->
     <link href="css/style.css" rel="stylesheet" />
     <title>Car data visualization web</title>
 </head>
@@ -16,8 +71,9 @@
             <span id="deviceCount">0 devices</span>
             <select id="listOfDevices" class="select_box"></select>
         </span>
-        <span>Car data visualization web TEAM01</span>
+        
     </h1>
+    <h1>Car data visualization web</h1>
     <div id="map"></div>
     <script>
         function initMap() {
@@ -33,5 +89,11 @@
         }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbhV858u5KE45D4PmyzSwkAxX4W6xfK0w&callback=initMap"></script>
+    <div>
+        <h2 id="distance">Distance covered: -</h2>
+    </div>
+    <div>
+        <h2 id="speed">Current speed: -</h2>
+    </div>
 </body>
 </html>
