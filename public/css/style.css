@@ -50,7 +50,7 @@ select:disabled::-ms-expand {
  * that contains the map.
  */
  #map {
-  height: 100%;
+  height: 80%;
 }
 
 /*
@@ -58,7 +58,8 @@ select:disabled::-ms-expand {
  */
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 80%;
+  margin: 2;
+  padding: 2;
 }
+
