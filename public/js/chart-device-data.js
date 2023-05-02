@@ -181,6 +181,7 @@ $(document).ready(() => {
   // if deployed to a site supporting SSL, use wss://
   const protocol = document.location.protocol.startsWith('https') ? 'wss://' : 'ws://';
   const webSocket = new WebSocket(protocol + location.host);
+  console.log("hola");
 
   // A class for holding the last N points of telemetry for a device
   // FINAL ASSIGNMENT: we do not need any array, as we only need to print the last value received
@@ -329,8 +330,8 @@ $(document).ready(() => {
     chartData.datasets[0].data = device.temperatureData;
     chartData.datasets[1].data = device.humidityData;
     myLineChart.update();*/
-    distanceLabel = device.distance;
-    speedLabel = device.speed;
+    distanceLabel.innerHTML = device.distance;
+    speedLabel.innerHTML = device.speed;
   }
   listOfDevices.addEventListener('change', OnSelectionChange, false);
 
@@ -387,3 +388,4 @@ $(document).ready(() => {
     }
   };
 });
+
