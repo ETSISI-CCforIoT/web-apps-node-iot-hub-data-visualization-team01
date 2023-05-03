@@ -334,6 +334,19 @@ $(document).ready(() => {
   const engineRpmLabel = document.getElementById('rpm');
   const lateralGsLabel = document.getElementById('latG');
   const steeringAngleLabel = document.getElementById('sa');
+  
+  function updateLocation(lat, long, map) {
+    var location = {lat: lat, lng: long};
+    console.log(location);
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: location
+    });
+    var marker = new google.maps.Marker({
+      map: map,
+      position: location
+    });
+  }
 
   function OnSelectionChange() {
     const device = trackedDevices.findDevice(listOfDevices[listOfDevices.selectedIndex].text);
@@ -347,6 +360,7 @@ $(document).ready(() => {
     lateralGsLabel.innerHTML = "Lateral Gs: " + device.speed + " G";
     engineRpmLabel.innerHTML = "Engine RPM: " + device.speed + " RPM";
     steeringAngleLabel.innerHTML = "Steering angle: " + device.speed + " º";
+    updateLocation(device.latitude, device.longitude, mapLayout);
   }
   listOfDevices.addEventListener('change', OnSelectionChange, false);
 
