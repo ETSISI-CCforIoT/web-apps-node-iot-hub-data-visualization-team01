@@ -330,6 +330,10 @@ $(document).ready(() => {
   const mapLayout = document.getElementById('map');
   const distanceLabel = document.getElementById('distance');
   const speedLabel = document.getElementById('speed');
+  const accelerationGsLabel = document.getElementById('accelG');
+  const engineRpmLabel = document.getElementById('rpm');
+  const lateralGsLabel = document.getElementById('latG');
+  const steeringAngleLabel = document.getElementById('sa');
 
   function OnSelectionChange() {
     const device = trackedDevices.findDevice(listOfDevices[listOfDevices.selectedIndex].text);
@@ -339,6 +343,10 @@ $(document).ready(() => {
     myLineChart.update();*/
     distanceLabel.innerHTML = "Distance covered: " + device.distance + " Miles";
     speedLabel.innerHTML = "Current speed: " + device.speed + " MPH";
+    accelerationGsLabel.innerHTML = "Acceleration Gs: " + device.accelerationGs + " G";
+    lateralGsLabel.innerHTML = "Lateral Gs: " + device.speed + " G";
+    engineRpmLabel.innerHTML = "Engine RPM: " + device.speed + " RPM";
+    steeringAngleLabel.innerHTML = "Steering angle: " + device.speed + " º";
   }
   listOfDevices.addEventListener('change', OnSelectionChange, false);
 
@@ -359,7 +367,7 @@ $(document).ready(() => {
       /*if (!messageData.MessageDate || (!messageData.IotData.temperature && !messageData.IotData.humidity)) {
         return;
       }*/
-      if (!messageData.MessageDate || (!messageData.IotData.distance && !messageData.IotData.speed && !messageData.IotData.latitude && !messageData.IotData.longitude)) {
+      if (!messageData.MessageDate || (!messageData.IotData.distance && !messageData.IotData.speed && !messageData.IotData.latitude && !messageData.IotData.longitude && !messageData.IotData.accelerationGs && !messageData.IotData.engineRpm && !messageData.IotData.lateralGs && !messageData.IotData.steeringAngle)) {
         return;
       }
 
