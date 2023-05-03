@@ -357,9 +357,9 @@ $(document).ready(() => {
     distanceLabel.innerHTML = "Distance covered: " + device.distance + " Miles";
     speedLabel.innerHTML = "Current speed: " + device.speed + " MPH";
     accelerationGsLabel.innerHTML = "Acceleration Gs: " + device.accelerationGs + " G";
-    lateralGsLabel.innerHTML = "Lateral Gs: " + device.speed + " G";
-    engineRpmLabel.innerHTML = "Engine RPM: " + device.speed + " RPM";
-    steeringAngleLabel.innerHTML = "Steering angle: " + device.speed + "º";
+    lateralGsLabel.innerHTML = "Lateral Gs: " + device.lateralGs + " G";
+    engineRpmLabel.innerHTML = "Engine RPM: " + device.engineRpm + " RPM";
+    steeringAngleLabel.innerHTML = "Steering angle: " + device.steeringAngle + "º";
     updateLocation(device.latitude, device.longitude, mapLayout);
   }
   listOfDevices.addEventListener('change', OnSelectionChange, false);
