@@ -198,7 +198,10 @@ $(document).ready(() => {
       this.speed = null;
       this.latitude = 40.388461795407444;
       this.longitude = -3.6298768772729666;
-
+      this.accelerationGs = null;
+      this.engineRpm = null;
+      this.lateralGs = null;
+      this.steeringAngle = null;
     }
 
     // FINAL ASSIGNMENT: this method add the elements to the arrays. In our case, it is easier, as we do 
@@ -214,12 +217,16 @@ $(document).ready(() => {
         this.humidityData.shift();
       }
     }*/
-    addData(t, dist, sp, lat, long) {
+    addData(t, dist, sp, lat, long, accelG, rpm, latG, sa) {
       this.time = t;
       this.distance = dist;
       this.speed = sp;
       this.latitude = lat;
       this.longitude = long;
+      this.accelerationGs = accelG;
+      this.engineRpm = rpm;
+      this.lateralGs = latG;
+      this.steeringAngle = sa;
     }
   }
 
@@ -330,8 +337,8 @@ $(document).ready(() => {
     chartData.datasets[0].data = device.temperatureData;
     chartData.datasets[1].data = device.humidityData;
     myLineChart.update();*/
-    distanceLabel.innerHTML = device.distance;
-    speedLabel.innerHTML = device.speed;
+    distanceLabel.innerHTML = "Distance covered: " + device.distance + " Miles";
+    speedLabel.innerHTML = "Current speed: " + device.speed + " MPH";
   }
   listOfDevices.addEventListener('change', OnSelectionChange, false);
 
@@ -381,7 +388,7 @@ $(document).ready(() => {
           OnSelectionChange();
         }
       }
-
+      OnSelectionChange();
       //myLineChart.update();
     } catch (err) {
       console.error(err);
