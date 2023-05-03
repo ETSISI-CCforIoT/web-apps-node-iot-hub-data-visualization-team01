@@ -359,7 +359,7 @@ $(document).ready(() => {
     accelerationGsLabel.innerHTML = "Acceleration Gs: " + device.accelerationGs + " G";
     lateralGsLabel.innerHTML = "Lateral Gs: " + device.speed + " G";
     engineRpmLabel.innerHTML = "Engine RPM: " + device.speed + " RPM";
-    steeringAngleLabel.innerHTML = "Steering angle: " + device.speed + " º";
+    steeringAngleLabel.innerHTML = "Steering angle: " + device.speed + "º";
     updateLocation(device.latitude, device.longitude, mapLayout);
   }
   listOfDevices.addEventListener('change', OnSelectionChange, false);
@@ -389,13 +389,13 @@ $(document).ready(() => {
       const existingDeviceData = trackedDevices.findDevice(messageData.DeviceId);
 
       if (existingDeviceData) {
-        existingDeviceData.addData(messageData.MessageDate, messageData.IotData.distance, messageData.IotData.speed, messageData.IotData.latitude, messageData.IotData.longitude);
+        existingDeviceData.addData(messageData.MessageDate, messageData.IotData.distance, messageData.IotData.speed, messageData.IotData.latitude, messageData.IotData.longitude, messageData.IotData.accelerationGs, messageData.IotData.engineRpm, messageData.IotData.lateralGs, messageData.IotData.steeringAngle);
       } else {
         const newDeviceData = new DeviceData(messageData.DeviceId);
         trackedDevices.devices.push(newDeviceData);
         const numDevices = trackedDevices.getDevicesCount();
         deviceCount.innerText = numDevices === 1 ? `${numDevices} device` : `${numDevices} devices`;
-        newDeviceData.addData(messageData.MessageDate, messageData.IotData.distance, messageData.IotData.speed, messageData.IotData.latitude, messageData.IotData.longitude);
+        newDeviceData.addData(messageData.MessageDate, messageData.IotData.distance, messageData.IotData.speed, messageData.IotData.latitude, messageData.IotData.longitude, messageData.IotData.accelerationGs, messageData.IotData.engineRpm, messageData.IotData.lateralGs, messageData.IotData.steeringAngle);
 
         // add device to the UI list
         const node = document.createElement('option');
